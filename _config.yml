@@ -1,0 +1,20 @@
+# Site settings
+title: 'Roan Comiskey Wedding'
+baseurl: ''
+distbase: '../dist'
+imagebase: '../dist/images'
+
+source: _src
+
+# Build settings
+permalink: pretty
+exclude: [
+  'node_modules',
+  'package.json',
+  'package-lock.json',
+  'gulpfile.js',
+  'README.md',
+  'SOURCE',
+  'assets/'
+]
+languages: ['en']
