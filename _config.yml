@@ -1,8 +1,8 @@
 # Site settings
 title: 'Roan Comiskey Wedding'
 baseurl: ''
-distbase: '../dist'
-imagebase: '../dist/images'
+distbase: './dist'
+imagebase: './dist/images'
 
 source: _src
 

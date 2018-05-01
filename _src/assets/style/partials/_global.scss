@@ -1,17 +1,27 @@
-// Colors
-$black: #000;
-$white: #fff;
-
-$font-main: sans-serif;
-$font-size: 16px;
-
-$screen-xs: 400px;
-$screen-sm: 768px;
-$screen-md: 1024px;
-$screen-lg: 1200px;
-
+html,
 body {
-  background: $white;
-  font-size: $font-size;
+  color: $color-text;
   font-family: $font-main;
+  font-weight: 400;
+  font-size: $font-size;
+  line-height: 1.2;
+}
+
+img {
+  max-width: 100%;
+}
+
+header {
+
+  padding: 2rem 0px;
+  text-align: center;
+
+  p {
+    text-transform: uppercase;
+  }
+
+  img {
+    margin-bottom: 1rem;
+  }
+
 }
