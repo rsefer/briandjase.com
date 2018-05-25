@@ -11,6 +11,29 @@ img {
   max-width: 100%;
 }
 
+.wrapper {
+
+  margin: 0px 1rem;
+
+  @media screen and (min-width: $screen-sm) {
+    margin: 0px auto;
+    width: $screen-sm - 2rem;
+  }
+
+  @media screen and (min-width: $screen-lg) {
+    width: $screen-md;
+  }
+
+}
+
+main {
+
+  section {
+    padding: 2rem 0px;
+  }
+
+}
+
 header {
 
   padding: 2rem 0px;

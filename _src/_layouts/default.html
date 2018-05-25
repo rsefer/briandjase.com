@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+  <title>{{ site.title }} | {{ site.wedding_date }} | {{ site.wedding_location }}</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0" />
   <link rel="stylesheet" href="https://use.typekit.net/rey8lub.css" />
@@ -12,5 +12,10 @@
 </head>
 <body>
 {{ content }}
+
+<script>
+{% include scripts.min.js %}
+</script>
+
 </body>
 </html>

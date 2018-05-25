@@ -36,6 +36,17 @@ p {
     margin-bottom: 0px;
   }
 
+  main & {
+
+    font-size: 1.25rem;
+    line-height: 1.4;
+
+    @media screen and (min-width: $screen-md) {
+      font-size: 1.5rem;
+    }
+
+  }
+
 }
 
 h1 {
@@ -44,7 +55,7 @@ h1 {
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 1.75rem;
   @media screen and (min-width: $screen-sm) { font-size: 3rem; }
 }
 
