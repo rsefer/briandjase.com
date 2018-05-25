@@ -16,12 +16,16 @@ img {
   margin: 0px 1rem;
 
   @media screen and (min-width: $screen-sm) {
+    margin: 0px 2rem;
+  }
+
+  @media screen and (min-width: $screen-md) {
     margin: 0px auto;
-    width: $screen-sm - 2rem;
+    width: $screen-md - 2rem;
   }
 
   @media screen and (min-width: $screen-lg) {
-    width: $screen-md;
+    width: $screen-md - 2rem;
   }
 
 }

@@ -1,0 +1,82 @@
+.wedding-party-group {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-flow: row wrap;
+  align-content: flex-end;
+  margin: 0px -1rem;
+
+  @media screen and (min-width: $screen-sm) {
+    margin: 0px -2rem;
+  }
+
+  @media screen and (min-width: $screen-md) {
+    margin: 0px;
+  }
+
+}
+
+.party-member {
+
+  margin-left: 3%;
+  width: 48.5%;
+  background: {
+    size: cover;
+    position: center center;
+  }
+
+  &:nth-child(odd) {
+    margin-left: 0px;
+  }
+
+  &:nth-child(n+3) {
+    margin-top: 3%;
+  }
+
+  &:after {
+    content: '';
+    display: block;
+    padding-bottom: 100%;
+  }
+
+  @media screen and (min-width: $screen-xs) {
+
+    width: 24.25%;
+
+    &,
+    &:nth-child(odd) {
+      margin-left: 1%;
+    }
+
+    &:nth-child(4n-3) {
+      margin-left: 0px;
+    }
+
+    &:nth-child(n+3) {
+      margin-top: 0px;
+    }
+
+    &:nth-child(n+5) {
+      margin-top: 1%;
+    }
+
+  }
+
+  $women: '';
+  $men: 'matt', 'andy', 'alex', 'brendan', 'dubois', 'kyle', 'matt', 'scott', 'rob';
+
+  $people: append($women, $men);
+  @each $man in $men {
+    &[data-party-member="#{$man}"] {
+      $filename: '#{$man}.jpg';
+      @if $man == 'alex' {
+        $filename: 'alex.gif';
+      }
+      background-image: url('/dist/images/people/cropped/#{$filename}');
+    }
+  }
+
+}
