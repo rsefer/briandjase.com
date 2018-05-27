@@ -1,0 +1,14 @@
+<div class="wedding-party-group">
+  {% for member in site.data.members %}
+  <div class="party-member">
+    <img data-src="{{ site.imagebase }}/people/cropped/{{ member.file }}">
+    <div class="party-member-inner">
+      <div class="member-name">{{ member.name }}</div>
+      {% if member.title %}<div class="member-title">{{ member.title }}</div>{% endif %}
+      <div class="member-description">
+        <p>{{ member.description }}</p>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
