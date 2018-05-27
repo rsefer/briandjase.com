@@ -7,15 +7,31 @@
   flex-wrap: wrap;
   flex-flow: row wrap;
   align-content: flex-end;
-  margin: 0px -1rem;
+  // margin: 0px -1rem;
 
-  @media screen and (min-width: $screen-sm) {
-    margin: 0px -2rem;
+  &:after {
+    content: ' ';
+    display: block;
+    clear: both;
   }
 
-  @media screen and (min-width: $screen-md) {
-    margin: 0px;
+  &:not(:first-child) {
+
+    margin-top: 3%;
+
+    @media screen and (min-width: $screen-sm) {
+      margin-top: 1%;
+    }
+
   }
+
+  // @media screen and (min-width: $screen-sm) {
+  //   margin: 0px -2rem;
+  // }
+  //
+  // @media screen and (min-width: $screen-lg) {
+  //   margin: 0px;
+  // }
 
 }
 
@@ -26,7 +42,9 @@
   background: {
     size: cover;
     position: center center;
+    color: $black;
   }
+  filter: grayscale(100%);
 
   &:nth-child(odd) {
     margin-left: 0px;
@@ -42,16 +60,25 @@
     padding-bottom: 100%;
   }
 
+  &:hover {
+    cursor: pointer;
+    filter: grayscale(0%);
+  }
+
+  &-inner {
+    display: none;
+  }
+
   @media screen and (min-width: $screen-xs) {
 
-    width: 24.25%;
+    width: percentage((1 - 0.03) / 3);
 
     &,
     &:nth-child(odd) {
       margin-left: 1%;
     }
 
-    &:nth-child(4n-3) {
+    &:nth-child(3n-2) {
       margin-left: 0px;
     }
 
@@ -59,20 +86,44 @@
       margin-top: 0px;
     }
 
-    &:nth-child(n+5) {
+    &:nth-child(n+4) {
       margin-top: 1%;
     }
 
   }
 
-  $women: '';
+  @media screen and (min-width: $screen-sm) {
+
+    width: percentage((1 - 0.05) / 6);
+
+    &,
+    &:nth-child(odd),
+    &:nth-child(3n-2) {
+      margin-left: 1%;
+    }
+
+    &:nth-child(6n-5) {
+      margin-left: 0px;
+    }
+
+    &:nth-child(n+3) {
+      margin-top: 0px;
+    }
+
+    &:nth-child(n+7) {
+      margin-top: 1%;
+    }
+
+  }
+
+  $women: 'kait', 'amanda', 'kelly', 'megan', 'grace', 'catie', 'sarah', 'marykate', 'maggie', 'courtney';
   $men: 'matt', 'andy', 'alex', 'brendan', 'dubois', 'kyle', 'matt', 'scott', 'rob';
 
-  $people: append($women, $men);
-  @each $man in $men {
-    &[data-party-member="#{$man}"] {
-      $filename: '#{$man}.jpg';
-      @if $man == 'alex' {
+  $people: join($women, $men);
+  @each $person in $people {
+    &[data-party-member="#{$person}"] {
+      $filename: '#{$person}.jpg';
+      @if $person == 'alex' {
         $filename: 'alex.gif';
       }
       background-image: url('/dist/images/people/cropped/#{$filename}');
