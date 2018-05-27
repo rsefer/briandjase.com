@@ -37,6 +37,7 @@
 
 .party-member {
 
+  position: relative;
   margin-left: 3%;
   width: 48.5%;
   background: {
@@ -45,6 +46,7 @@
     color: $black;
   }
   filter: grayscale(100%);
+  overflow: hidden;
 
   &:nth-child(odd) {
     margin-left: 0px;
@@ -67,6 +69,19 @@
 
   &-inner {
     display: none;
+  }
+
+  img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: 100%;
+    max-width: none;
+    max-height: none;
   }
 
   @media screen and (min-width: $screen-xs) {
@@ -116,18 +131,18 @@
 
   }
 
-  $women: 'kait', 'amanda', 'kelly', 'megan', 'grace', 'catie', 'sarah', 'marykate', 'maggie', 'courtney';
-  $men: 'matt', 'andy', 'alex', 'brendan', 'dubois', 'kyle', 'matt', 'scott', 'rob';
-
-  $people: join($women, $men);
-  @each $person in $people {
-    &[data-party-member="#{$person}"] {
-      $filename: '#{$person}.jpg';
-      @if $person == 'alex' {
-        $filename: 'alex.gif';
-      }
-      background-image: url('/dist/images/people/cropped/#{$filename}');
-    }
-  }
+  // $women: 'kait', 'amanda', 'kelly', 'megan', 'grace', 'catie', 'sarah', 'marykate', 'maggie', 'courtney';
+  // $men: 'matt', 'andy', 'alex', 'brendan', 'dubois', 'kyle', 'matt', 'scott', 'rob';
+  //
+  // $people: join($women, $men);
+  // @each $person in $people {
+  //   &[data-party-member="#{$person}"] {
+  //     $filename: '#{$person}.jpg';
+  //     @if $person == 'alex' {
+  //       $filename: 'alex.gif';
+  //     }
+  //     background-image: url('/dist/images/people/cropped/#{$filename}');
+  //   }
+  // }
 
 }

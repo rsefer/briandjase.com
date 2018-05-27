@@ -1,0 +1,17 @@
+[data-section="photos"] {
+
+  padding-bottom: 0px;
+
+  img {
+
+    display: block;
+
+    &:nth-child(1),
+    &:nth-child(2) {
+      float: left;
+      width: 50%;
+    }
+
+  }
+
+}
