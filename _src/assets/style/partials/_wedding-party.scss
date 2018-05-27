@@ -7,7 +7,6 @@
   flex-wrap: wrap;
   flex-flow: row wrap;
   align-content: flex-end;
-  // margin: 0px -1rem;
 
   &:after {
     content: ' ';
@@ -25,14 +24,6 @@
 
   }
 
-  // @media screen and (min-width: $screen-sm) {
-  //   margin: 0px -2rem;
-  // }
-  //
-  // @media screen and (min-width: $screen-lg) {
-  //   margin: 0px;
-  // }
-
 }
 
 .party-member {
@@ -43,10 +34,11 @@
   background: {
     size: cover;
     position: center center;
-    color: $black;
+    // color: $black;
   }
   filter: grayscale(100%);
   overflow: hidden;
+  transition: filter 300ms;
 
   &:nth-child(odd) {
     margin-left: 0px;
@@ -68,7 +60,13 @@
   }
 
   &-inner {
+
     display: none;
+
+    .member-popup & {
+      display: block;
+    }
+
   }
 
   img {
@@ -131,18 +129,72 @@
 
   }
 
-  // $women: 'kait', 'amanda', 'kelly', 'megan', 'grace', 'catie', 'sarah', 'marykate', 'maggie', 'courtney';
-  // $men: 'matt', 'andy', 'alex', 'brendan', 'dubois', 'kyle', 'matt', 'scott', 'rob';
-  //
-  // $people: join($women, $men);
-  // @each $person in $people {
-  //   &[data-party-member="#{$person}"] {
-  //     $filename: '#{$person}.jpg';
-  //     @if $person == 'alex' {
-  //       $filename: 'alex.gif';
-  //     }
-  //     background-image: url('/dist/images/people/cropped/#{$filename}');
-  //   }
-  // }
+}
+
+.member-popup {
+
+  display: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background: transparentize($black, 0.25);
+
+  .popup-inner {
+
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1rem;
+    width: calc(100% - 2rem);
+    background: $white;
+
+    @media screen and (min-width: $screen-sm) {
+      padding: 2rem;
+      width: $screen-sm - 10rem;
+    }
+
+    @media screen and (min-width: $screen-md) {
+      width: $screen-md - 10rem;
+    }
+
+    @media screen and (min-width: $screen-lg) {
+      width: $screen-lg - 10rem;
+    }
+
+    .popup-close {
+
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-size: 3rem;
+      font-weight: bold;
+      line-height: 1.75rem;
+
+      &:hover {
+        cursor: pointer;
+        opacity: 0.75;
+      }
+
+    }
+
+    .member-name {
+      margin-bottom: 1rem;
+    }
+
+  }
+
+}
+
+body.popup-active {
+
+  overflow: hidden;
+
+  .member-popup {
+    display: block;
+  }
 
 }

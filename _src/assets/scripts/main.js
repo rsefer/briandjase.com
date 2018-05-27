@@ -9,6 +9,27 @@
   });
 });
 
+[].forEach.call(document.querySelectorAll('.party-member'), function(el) {
+  el.addEventListener('click', function(e) {
+    var popup = document.getElementById('member-popup');
+    if (popup) {
+      popup.parentElement.removeChild(popup);
+    }
+    popup = document.createElement('div');
+    document.body.classList.add('popup-active');
+    popup.setAttribute('id', 'member-popup');
+    popup.classList.add('member-popup');
+    popup.innerHTML = '<div class="popup-inner"><div class="popup-inner-wrap"><div id="popup-close" class="popup-close">&times;</div><div class="party-member-inner">' + el.getElementsByClassName('party-member-inner')[0].innerHTML + '</div></div></div>';
+    document.getElementsByTagName('body')[0].appendChild(popup);
+    document.getElementById('popup-close').addEventListener('click', function(e) {
+      document.body.classList.remove('popup-active');
+    });
+    document.getElementById('member-popup').addEventListener('click', function(e) {
+      document.body.classList.remove('popup-active');
+    });
+  });
+});
+
 // mapboxgl.accessToken = 'pk.eyJ1Ijoic2VmZXJkZXNpZ24iLCJhIjoiY2pocDZ4ZHlxNDVocDM2bTc5OW05Z3h4YSJ9.Ofd0_UrlAyYYU9kRJVWdRQ';
 //
 // var map = new mapboxgl.Map({
