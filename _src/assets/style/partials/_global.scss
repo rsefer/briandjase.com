@@ -33,7 +33,15 @@ img {
 main {
 
   section {
+
     padding: 2rem 0px;
+
+    &:after {
+      content: ' ';
+      display: block;
+      clear: both;
+    }
+
   }
 
 }

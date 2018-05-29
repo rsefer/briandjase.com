@@ -1,0 +1,23 @@
+[data-section="details"] {
+
+  .details-block {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-flow: row wrap;
+    align-content: flex-end;
+
+    img {
+      order: 1;
+    }
+
+    .details-content {
+      order: 2;
+    }
+
+  }
+
+}
