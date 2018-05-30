@@ -5,9 +5,10 @@
     <div class="party-member-inner">
       <h4 class="member-name">{{ member.name }}</h4>
       {% if member.title %}<p class="member-title"><strong>{{ member.title }}</strong></p>{% endif %}
-      {% if member.description %}<div class="member-description">
-        <p>{{ member.description.length }}</p>
-      </div>{% endif %}
+      <div class="member-description">
+        <p>{{ member.description }}</p>
+        <p class="attribution">&mdash; {% if member.group == 'bride' %}Bri{% elsif member.group == 'groom' %}Jase{% endif %}</p>
+      </div>
     </div>
   </div>
   {% endfor %}
