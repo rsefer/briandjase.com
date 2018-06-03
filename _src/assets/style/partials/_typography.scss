@@ -68,3 +68,22 @@ h4 {
   font-size: 1rem;
   @media screen and (min-width: $screen-sm) { font-size: 1.5rem; }
 }
+
+.svg-dump {
+  display: none;
+}
+
+.icon {
+
+  display: inline-block;
+  vertical-align: middle;
+
+  &.left {
+    margin-right: 0.5em;
+  }
+
+  &.right {
+    margin-right: 0.5em;
+  }
+
+}

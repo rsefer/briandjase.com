@@ -24,9 +24,9 @@ img {
     width: $screen-md - 2rem;
   }
 
-  @media screen and (min-width: $screen-lg) {
-    width: $screen-md - 2rem;
-  }
+  // @media screen and (min-width: $screen-lg) {
+  //   width: $screen-lg - 2rem;
+  // }
 
 }
 
@@ -59,4 +59,8 @@ header {
     margin-bottom: 1rem;
   }
 
+}
+
+address {
+  font-style: normal;
 }

@@ -19,7 +19,11 @@
     document.body.classList.add('popup-active');
     popup.setAttribute('id', 'member-popup');
     popup.classList.add('member-popup');
-    popup.innerHTML = '<div class="popup-inner"><div class="popup-inner-wrap"><div id="popup-close" class="popup-close">&times;</div><div class="party-member-inner">' + el.getElementsByClassName('party-member-inner')[0].innerHTML + '</div></div></div>';
+    var popupImageSource = el.getElementsByClassName('cropped')[0].src;
+    if (el.getElementsByClassName('full')) {
+      popupImageSource = el.getElementsByClassName('cropped')[0].src;
+    }
+    popup.innerHTML = '<div class="popup-inner"><div class="popup-inner-wrap"><div id="popup-close" class="popup-close">&times;</div><div class="party-member-inner"><img src="' + popupImageSource + '"><div class="popup-content">' + el.getElementsByClassName('party-member-inner')[0].innerHTML + '</div></div></div></div>';
     document.getElementsByTagName('body')[0].appendChild(popup);
     document.getElementById('popup-close').addEventListener('click', function(e) {
       document.body.classList.remove('popup-active');
