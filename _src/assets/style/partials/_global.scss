@@ -34,7 +34,7 @@ main {
 
   section {
 
-    padding: 2rem 0px;
+    padding: 4rem 0px;
 
     &:after {
       content: ' ';
@@ -46,21 +46,12 @@ main {
 
 }
 
-header {
-
-  padding: 2rem 0px;
-  text-align: center;
-
-  p {
-    text-transform: uppercase;
-  }
-
-  img {
-    margin-bottom: 1rem;
-  }
-
-}
-
 address {
+
   font-style: normal;
+
+  strong {
+    color: $green;
+  }
+
 }

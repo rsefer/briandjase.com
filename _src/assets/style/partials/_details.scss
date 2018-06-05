@@ -1,5 +1,13 @@
 [data-section="details"] {
 
+  h2 {
+
+    @media screen and (min-width: $screen-sm) {
+      text-align: left;
+    }
+
+  }
+
   .icon-map-marker {
     width: 0.75em;
     height: 1.5em;
@@ -29,7 +37,7 @@
 
     }
 
-    @media screen and (min-width: $screen-md) {
+    @media screen and (min-width: $screen-sm) {
 
       &:nth-of-type(2) {
 
@@ -47,18 +55,30 @@
 
       .details-content {
         margin-right: 5%;
-        width: 65%;
+        width: 55%;
       }
 
       .details-images {
 
-        width: 30%;
+        width: 40%;
 
         img {
           max-width: none;
           width: 100%;
         }
 
+      }
+
+    }
+
+    @media screen and (min-width: $screen-md) {
+
+      .details-content {
+        width: 65%;
+      }
+
+      .details-images {
+        width: 30%;
       }
 
     }
@@ -91,7 +111,6 @@
       }
 
     }
-
 
   }
 
