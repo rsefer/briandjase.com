@@ -20,7 +20,13 @@
     }
 
     .details-images {
+
       margin-top: 2rem;
+
+      img {
+        max-width: 300px;
+      }
+
     }
 
     @media screen and (min-width: $screen-md) {
@@ -45,7 +51,14 @@
       }
 
       .details-images {
+
         width: 30%;
+
+        img {
+          max-width: none;
+          width: 100%;
+        }
+
       }
 
     }
