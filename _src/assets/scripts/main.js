@@ -20,8 +20,8 @@
     popup.setAttribute('id', 'member-popup');
     popup.classList.add('member-popup');
     var popupImageSource = el.getElementsByClassName('cropped')[0].src;
-    if (el.getElementsByClassName('full')) {
-      popupImageSource = el.getElementsByClassName('cropped')[0].src;
+    if (el.getElementsByClassName('full').length > 0) {
+      popupImageSource = el.getElementsByClassName('full')[0].dataset.src;
     }
     popup.innerHTML = '<div class="popup-inner"><div class="popup-inner-wrap"><div id="popup-close" class="popup-close">&times;</div><div class="party-member-inner"><img src="' + popupImageSource + '"><div class="popup-content">' + el.getElementsByClassName('party-member-inner')[0].innerHTML + '</div></div></div></div>';
     document.getElementsByTagName('body')[0].appendChild(popup);

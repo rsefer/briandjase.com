@@ -7,6 +7,7 @@
   title: 'Matron of Honor'
   group: 'bride'
   file: 'amanda.jpg'
+  file_full: 'amanda.jpg'
   description: "From 3rd grade student council battles to weeknight road trips to see Kesha, we've done it all, side by side."
 - name: 'Catie Schwan'
   group: 'bride'
@@ -15,6 +16,7 @@
 - name: 'Courtney Bestler'
   group: 'bride'
   file: 'courtney.jpg'
+  file_full: 'courtney.jpg'
   description: 'My favorite person to watch sports with (sorry Jase). My champion-winning beach volleyball teammate and fearless captain. We bonded first at black light parties freshman year and have become SO MUCH MORE mature with city bottomless brunches.'
 - name: 'Grace Gryzlo'
   group: 'bride'
@@ -23,6 +25,7 @@
 - name: 'Kelly Wille'
   group: 'bride'
   file: 'kelly.jpg'
+  file_full: 'kelly.jpg'
   description: "American Idol concerts. Frisco melts. Creating the perfect emo mix tapes. Pool days at Lou and Jeanne's. These are only a few of my favorite activities with Kel the past 15+ years."
 - name: 'Maggie Sack'
   group: 'bride'
@@ -53,6 +56,7 @@
 - name: 'Alex Strand'
   group: 'groom'
   file: 'alex.jpg'
+  file_full: 'alex.gif'
   description: ''
 - name: 'Brendan Damm'
   group: 'groom'
