@@ -7,8 +7,7 @@
       <h4 class="member-name">{{ member.name }}</h4>
       {% if member.title %}<p class="member-title"><strong>{{ member.title }}</strong></p>{% endif %}
       <div class="member-description">
-        <p>{{ member.description }}</p>
-        <p class="attribution">&mdash; {% if member.group == 'bride' %}Bri{% elsif member.group == 'groom' %}Jase{% endif %}</p>
+        <p>&ldquo;{{ member.description }}&rdquo; <strong>&mdash; {% if member.group == 'bride' %}Bri{% elsif member.group == 'groom' %}Jase{% endif %}</strong></p>
       </div>
     </div>
   </div>
