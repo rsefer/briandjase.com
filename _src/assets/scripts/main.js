@@ -39,14 +39,15 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoic2VmZXJkZXNpZ24iLCJhIjoiY2pocDZ4ZHlxNDVocDM2b
 var map = new mapboxgl.Map({
   container: 'map',
   style: 'mapbox://styles/seferdesign/cji37o1wx1d6g2rpr5p3c5xd9',
-  zoom: 13,
-  maxZoom: 14,
+  zoom: 14,
+  maxZoom: 15,
   center: [-87.661437, 41.887771],
   attributionControl: false,
   interactive: false
 });
 
-map.on('load', function () {
+map.on('load', function() {
+
   map.addLayer({
     "id": "points",
     "type": "symbol",
@@ -99,4 +100,5 @@ map.on('load', function () {
       "text-anchor": "top"
     }
   });
+
 });
