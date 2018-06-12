@@ -6,11 +6,29 @@
 
     display: block;
 
+    &:not(:last-child) {
+      margin-bottom: 3%;
+    }
+
+    @media screen and (min-width: $screen-xs) {
+
+      &:not(:last-child) {
+        margin-bottom: 1%;
+      }
+
+    }
+
     @media screen and (min-width: $screen-md) {
 
       &.portrait {
+
         float: left;
-        width: 50%;
+        width: 49.5%;
+
+        + .portrait {
+          margin-left: 1%;
+        }
+
       }
 
     }
