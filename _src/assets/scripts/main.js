@@ -48,68 +48,83 @@ var map = new mapboxgl.Map({
 
 map.on('load', function() {
 
-  map.addLayer({
-    "id": "points",
-    "type": "symbol",
-    "source": {
-      "type": "geojson",
-      "data": {
-        "type": "FeatureCollection",
-        "features": [
-          {
-            "type": "Feature",
-            "geometry": {
-              "type": "Point",
-              "coordinates": [-87.644256, 41.879455]
-            },
-            "properties": {
-              "title": "Old St. Patrick's Church",
-              "icon": "religious-christian"
-            }
-          },
-          {
-            "type": "Feature",
-            "geometry": {
-              "type": "Point",
-              "coordinates": [-87.673508, 41.890045]
-            },
-            "properties": {
-              "title": "Salvage One",
-              "icon": "amusement-park"
-            }
-          },
-          {
-            "type": "Feature",
-            "geometry": {
-              "type": "Point",
-              "coordinates": [-87.651998, 41.887582]
-            },
-            "properties": {
-              "title": "Ace Hotel",
-              "icon": "lodging"
-            }
-          },
-          {
-            "type": "Feature",
-            "geometry": {
-              "type": "Point",
-              "coordinates": [-87.637300, 41.888758]
-            },
-            "properties": {
-              "title": "Holiday Inn",
-              "icon": "lodging"
-            }
-          }
-        ]
+  var markers = {
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-87.644256, 41.879455]
+        },
+        "properties": {
+          "title": "Old St. Patrick's Church",
+          "icon": "religious-christian"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-87.673508, 41.890045]
+        },
+        "properties": {
+          "title": "Salvage One",
+          "icon": "amusement-park"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-87.651998, 41.887582]
+        },
+        "properties": {
+          "title": "Ace Hotel",
+          "icon": "lodging"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-87.637300, 41.888758]
+        },
+        "properties": {
+          "title": "Holiday Inn",
+          "icon": "lodging"
+        }
       }
-    },
+    ]
+  };
+
+  map.addSource('markers', {
+    "type": "geojson",
+    "data": markers
+  });
+
+  map.addLayer({
+    "id": "markers",
+    "type": "symbol",
+    "source": "markers",
     "layout": {
       "icon-image": "{icon}-15",
       "text-field": "{title}",
       "text-font": ["PT Sans Regular", "Open Sans Semibold", "Arial Unicode MS Bold"],
       "text-offset": [0, 0.6],
       "text-anchor": "top"
+    },
+    "paint": {
+      "icon-color": "#ff0000"
     }
+  });
+
+  var bounds = new mapboxgl.LngLatBounds();
+  markers.features.forEach(function(feature) {
+    bounds.extend(feature.geometry.coordinates);
+  });
+  map.fitBounds(bounds, {
+    padding: 100
   });
 
 });
