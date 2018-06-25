@@ -123,8 +123,13 @@ map.on('load', function() {
   markers.features.forEach(function(feature) {
     bounds.extend(feature.geometry.coordinates);
   });
+
+  var mapPadding = 50;
+  if (window.innerWidth >= 768) {
+    mapPadding = 100;
+  }
   map.fitBounds(bounds, {
-    padding: 100
+    padding: mapPadding
   });
 
 });
