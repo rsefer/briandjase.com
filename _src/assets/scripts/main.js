@@ -38,7 +38,7 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoic2VmZXJkZXNpZ24iLCJhIjoiY2pocDZ4ZHlxNDVocDM2b
 
 var map = new mapboxgl.Map({
   container: 'map',
-  style: 'mapbox://styles/seferdesign/cji37o1wx1d6g2rpr5p3c5xd9',
+  style: 'mapbox://styles/seferdesign/cjivw5f7u91qu2rln7z5sn9ms',
   zoom: 14,
   maxZoom: 15,
   center: [-87.651695, 41.885455],
@@ -88,7 +88,7 @@ map.on('load', function() {
         "type": "Feature",
         "geometry": {
           "type": "Point",
-          "coordinates": [-87.637300, 41.888758]
+          "coordinates": [-87.637683, 41.889413]
         },
         "properties": {
           "title": "Holiday Inn",
@@ -98,25 +98,17 @@ map.on('load', function() {
     ]
   };
 
-  map.addSource('markers', {
-    "type": "geojson",
-    "data": markers
-  });
-
-  map.addLayer({
-    "id": "markers",
-    "type": "symbol",
-    "source": "markers",
-    "layout": {
-      "icon-image": "{icon}-15",
-      "text-field": "{title}",
-      "text-font": ["PT Sans Regular", "Open Sans Semibold", "Arial Unicode MS Bold"],
-      "text-offset": [0, 0.6],
-      "text-anchor": "top"
-    },
-    "paint": {
-      "icon-color": "#ff0000"
-    }
+  markers.features.forEach(function(marker) {
+    var el = document.createElement('div');
+    el.className = 'marker marker-' + marker.properties.icon;
+    el.dataset.title = marker.properties.title;
+    new mapboxgl.Marker({
+      element: el,
+      anchor: 'top',
+      offset: [0, -50]
+    })
+      .setLngLat(marker.geometry.coordinates)
+      .addTo(map);
   });
 
   var bounds = new mapboxgl.LngLatBounds();

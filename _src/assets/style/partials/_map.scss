@@ -1,5 +1,58 @@
 .map {
+
   width: 100%;
   height: 30rem;
   background: $black;
+
+  .marker {
+
+    position: relative;
+    width: 2rem;
+    height: 2rem;
+    background: {
+      size: 75% auto;
+      position: center center;
+      repeat: no-repeat;
+      color: $black;
+    }
+    border-radius: 1rem;
+
+    &:after {
+      content: attr(data-title);
+      display: block;
+      position: absolute;
+      top: calc(100% + 0.25rem);
+      left: 50%;
+      transform: translate(-50%, 0px);
+      width: 10rem;
+      text-align: center;
+      font-size: 1rem;
+      font-family: $font-bold;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    &-amusement-park {
+      background: {
+        image: url('/dist/images/icons/amusement-park.svg');
+        color: $red;
+      }
+    }
+
+    &-religious-christian {
+      background: {
+        image: url('/dist/images/icons/religious-christian.svg');
+        color: $blue;
+      }
+    }
+
+    &-lodging {
+      background: {
+        image: url('/dist/images/icons/lodging.svg');
+        color: $green;
+      }
+    }
+
+  }
+
 }
