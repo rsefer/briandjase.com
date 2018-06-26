@@ -23,6 +23,7 @@
 - name: 'Grace Gryzlo'
   group: 'bride'
   file: 'grace.jpg'
+  file_full: 'grace.jpg'
   description: 'Freshman year dorm buds and Kappa Dummies (Deltas) for life. #BFFmoons of tiger petting, elephant riding and monkey feeding wouldn’t be the same without this one.'
 - name: 'Kelly Wille'
   group: 'bride'
