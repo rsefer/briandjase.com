@@ -21,8 +21,8 @@
     bottom: 0px;
     background: {
       size: cover;
-      position: center center;
-      image: url('./dist/images/jb_cropped.jpg');
+      position: 60% center;
+      image: url('./dist/images/hug.jpg');
     }
     opacity: 0;
     animation: {
@@ -31,6 +31,11 @@
       fill-mode: forwards;
       timing-function: linear;
     }
+
+    @media screen and (min-width: $screen-sm) {
+      background-position: center center;
+    }
+
   }
 
   .content {
@@ -54,7 +59,7 @@
     @media screen and (min-width: $screen-sm) {
       left: 3rem;
       right: 3rem;
-      bottom: 20%;
+      bottom: 15%;
     }
 
   }
