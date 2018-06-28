@@ -7,8 +7,8 @@
   .marker {
 
     position: relative;
-    width: 2rem;
-    height: 2rem;
+    width: 1rem;
+    height: 1rem;
     background: {
       size: 75% auto;
       position: center center;
@@ -24,12 +24,25 @@
       top: calc(100% + 0.25rem);
       left: 50%;
       transform: translate(-50%, 0px);
-      width: 10rem;
+      width: 5rem;
       text-align: center;
-      font-size: 1rem;
+      font-size: 0.5rem;
+      line-height: 1.2;
       font-family: $font-bold;
       letter-spacing: 1px;
       text-transform: uppercase;
+    }
+
+    @media screen and (min-width: $screen-sm) {
+      
+      width: 2rem;
+      height: 2rem;
+
+      &:after {
+        width: 10rem;
+        font-size: 1rem;
+      }
+
     }
 
     &-amusement-park {
