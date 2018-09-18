@@ -6,8 +6,6 @@ imagebase: './dist/images'
 wedding_date: 'January 5, 2019'
 wedding_location: 'Chicago, Illinois'
 
-source: _src
-
 # Build settings
 permalink: pretty
 exclude: [

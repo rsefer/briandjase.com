@@ -26,9 +26,9 @@ var gulp          = require('gulp'),
 
 var paths = {
   node_modules: 'node_modules/',
-  includes: '_src/_includes/',
-  src: '_src/assets/',
-  build: '_src/dist/',
+  includes: '_includes/',
+  src: 'assets/',
+  build: 'dist/',
   site: '_site/',
   jekyllDestinationPrefix: ''
 };
@@ -123,7 +123,7 @@ gulp.task('watch', function() {
   gulp.watch(paths.src + 'style/**/*', gulp.series('sass', 'jekyll-rebuild'));
   gulp.watch(paths.src + 'scripts/**/*', gulp.series('js', 'jekyll-rebuild'));
   gulp.watch(paths.src + 'images/**/*', gulp.series('images', 'jekyll-rebuild'));
-  gulp.watch(['_src/**/*.html', '_src/**/*.yml'], gulp.series('jekyll-rebuild'));
+  gulp.watch(['index.html', '_includes/**/*.html', '**/*.yml'], gulp.series('jekyll-rebuild'));
 });
 gulp.task('build', gulp.series('assets', 'jekyll-build', 'browser-sync'));
 gulp.task('dev', gulp.parallel('build', 'watch'));
