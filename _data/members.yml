@@ -59,6 +59,7 @@
   title: 'Best Man, Brother of the Groom'
   group: 'groom'
   file: 'matt.jpg'
+  file_full: 'matt.gif'
   description: "Great brother, Chicago's hottest DJ and ultimate party starter. The guy is a beauty of a human and will serve as the other half of the best man tandem."
 - name: 'Kyle Crowe'
   group: 'groom'
@@ -67,18 +68,22 @@
 - name: 'Brendan Damm'
   group: 'groom'
   file: 'brendan.jpg'
+  file_full: 'brendan.gif'
   description: "The ace of the Wet Bandits and a guy that just bleeds BIRD RED. I've lived with Brendan in four different apartments, and there's no one I'd rather kill a rat with."
 - name: 'Matt DuBois'
   group: 'groom'
   file: 'dubois.jpg'
+  file_full: 'dubois.gif'
   description: "A loyal friend of 23+ years, Matt sports a mane that makes Mufasa look like a chump. Quick power ranking of favorite 'Matts': 1) Regular Matt  2) Cali Matt  96) Fantasy Matt"
 - name: 'Rob Sefer'
   group: 'groom'
   file: 'rob.jpg'
+  file_full: 'rob.gif'
   description: "CEO of Sefer Design Co. (a one-stop shop for all your design needs). Rob is the creator of this website and our save-the-dates, and is one of the best friends anyone could ask for. He's sacrificing his weekly Saturday Stations to be a part of the wedding, and it means a lot to me."
 - name: 'Scott Skuteris'
   group: 'groom'
   file: 'scott.jpg'
+  file_full: 'scott.gif'
   description: "2006 IHSA Football All-State Selection, constant nap candidate and all-around great guy. In 10 years when Scott's hoisting the Lombardi Trophy as GM of the Super Bowl Champion Cleveland Browns, I'm going to brag to all four of my remaining friends that Scott stood up in my wedding."
 - name: 'Alex Strand'
   group: 'groom'
